@@ -108,23 +108,23 @@ public:
 
 class Laptop
 {
-	Mouse* hyperx;
+	Mouse* logicT;
 	CPU intel;
-	GPU nvidia;
-	SSD king;
+	GPU nV;
+	SSD kG;
 	RAM ddr;
 public:
 	Laptop() = default;
-	Laptop(Mouse* _hyper, const char* modelCPU, double gghz,
-		const char* modelGPU, double vats, const char* modelSSD,
+	Laptop(Mouse* _logicT, const char* mCPU, double gghz,
+		const char* mGPU, double vats, const char* mSSD,
 		double val, const char* modelRAM, double ggb)
-		:intel(modelCPU, gghz)
-		, nvidia(modelGPU, vats), king(modelSSD, val), ddr(modelRAM, ggb), hyperx(_hyper) {}
+		:intel(mCPU, gghz)
+		, nV(mGPU, vats), kG(mSSD, val), ddr(modelRAM, ggb), logicT(_logicT) {}
 	void Print() {
 		cout << "Laptop components >" << endl;
 		intel.Print();
-		nvidia.Print();
-		king.Print();
+		nV.Print();
+		kG.Print();
 		ddr.Print();
 	}
 
@@ -133,7 +133,7 @@ public:
 
 int main()
 {
-	Mouse mouse("HyperX", 1600);
+	Mouse mouse("Logitech", 3600);
 	mouse.Print();
 	Laptop laptop(&mouse, "Apple M2 Pro", 3.5, "Apple 16-core GPU", 21, "Apple SSD", 1024, "Unified Memory", 32);
 
